@@ -1,0 +1,32 @@
+name: GitHub Issue to Hexo
+author: 'JasonZeng <zenghongtu@gmail.com>'
+description: GitHub Action which converts GitHub Issue to Hexo post
+branding:
+  icon: arrow-up-circle
+  color: gray-dark
+inputs:
+  owner:
+    description: 'The owner of the repository'
+    required: true
+  repo:
+    description: 'The name of the repository'
+    required: true
+  issue_number:
+    description: 'The number of the pull request'
+    required: true
+  token:
+    description: 'The token to use to access the GitHub API'
+    required: true
+    
+  replace:
+    description: 'Whether to replace the contents of the original directory. Default `false`'
+    required: false
+    default: 'true'
+  output:
+    description: 'The directory of the hexo source. Default `process.cwd()`'
+    required: false
+    default: './'
+
+runs:
+  using: node16
+  main: dist/index.js
