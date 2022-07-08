@@ -68,7 +68,7 @@ function run() {
                     updated,
                     tags,
                     content,
-                    path: issue_number,
+                    path: `${issue_number}`,
                 }, replace);
             }
         }
