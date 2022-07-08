@@ -6,11 +6,11 @@
 	"author": "zenghongtu <zenghongtu@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "rm -rf dist && tsc",
+		"build": "rm -rf dist && tsc && yarn install --prod",
 		"dev": "tsc -w",
 		"release": "yarn version",
 		"preversion": "yarn build",
-		"postversion": "git push --tags && git push && echo \"Successfully released version $npm_package_version!\""
+		"postversion": "git commit -a -m \"bump\" && git push --tags && git push"
 	},
 	"devDependencies": {
 		"@types/hexo": "^3.8.7",
