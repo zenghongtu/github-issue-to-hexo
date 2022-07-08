@@ -19,11 +19,11 @@ inputs:
     required: true
     
   replace:
-    description: 'Whether to replace the contents of the original directory. Default `false`'
+    description: 'Whether to replace the contents of the original directory. Default `true`'
     required: false
     default: 'true'
   output:
-    description: 'The directory of the hexo source. Default `process.cwd()`'
+    description: 'The directory of the hexo source. Default `./`'
     required: false
     default: './'
 
