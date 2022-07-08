@@ -1,13 +1,16 @@
 {
 	"name": "GitHub-Issue-to-Hexo",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"main": "dist/index.js",
 	"repository": "git@github.com:zenghongtu/gh-issue-to-hexo.git",
 	"author": "zenghongtu <zenghongtu@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "rm -rf dist && tsc",
-		"dev": "tsc -w"
+		"build": "rm -rf dist && ncc build src/index.ts -o dist -m",
+		"dev": "tsc -w",
+		"release": "yarn version --patch",
+		"preversion": "yarn build",
+		"postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
 	},
 	"devDependencies": {
 		"@types/hexo": "^3.8.7",
@@ -17,6 +20,7 @@
 	"dependencies": {
 		"@actions/core": "^1.9.0",
 		"@actions/github": "^5.0.3",
+		"@vercel/ncc": "^0.34.0",
 		"hexo": "^6.2.0"
 	}
 }
