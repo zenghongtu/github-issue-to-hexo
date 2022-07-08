@@ -29,6 +29,4 @@ inputs:
 
 runs:
   using: node16
-  pre: 'setup.js'
   main: dist/index.js
-  post: 'cleanup.js'
