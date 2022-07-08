@@ -6,7 +6,7 @@
 	"author": "zenghongtu <zenghongtu@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "rm -rf dist && ncc build src/index.ts -o dist -m",
+		"build": "rm -rf dist && tsc",
 		"dev": "tsc -w",
 		"release": "yarn version --patch",
 		"preversion": "yarn build",
@@ -20,7 +20,6 @@
 	"dependencies": {
 		"@actions/core": "^1.9.0",
 		"@actions/github": "^5.0.3",
-		"@vercel/ncc": "^0.34.0",
 		"hexo": "^6.2.0"
 	}
 }
