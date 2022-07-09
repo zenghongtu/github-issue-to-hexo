@@ -11,17 +11,14 @@ inputs:
   repo:
     description: 'The name of the repository'
     required: true
-  issue_number:
-    description: 'The number of the pull request'
-    required: true
   token:
     description: 'The token to use to access the GitHub API'
     required: true
     
-  replace:
-    description: 'Whether to replace the contents of the original directory. Default `true`'
+  milestone:
+    description: 'Filter issues by milestone for Hexo. Default `publish`'
     required: false
-    default: 'true'
+    default: 'publish'
   output:
     description: 'The directory of the hexo source. Default `./`'
     required: false
