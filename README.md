@@ -2,6 +2,10 @@
 
 GitHub Action which converts GitHub Issue to Hexo post.
 
+## Example
+
+[zenghongtu/blog](https://github.com/zenghongtu/blog)
+
 ## Usage
 
 ```yml
@@ -21,6 +25,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'    
+      # use here
       - uses: zenghongtu/github-issue-to-hexo@v1.1.0
         with:
           owner: ${{ github.repository_owner }}
