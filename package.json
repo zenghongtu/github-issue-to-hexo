@@ -7,11 +7,11 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "rm -rf dist && ncc build src/index.ts -o dist -m",
-		"bump": "yarn run build && git commit -am 'bump'",
+		"bump": "yarn run build && git commit -am 'chore: Bump'",
 		"dev": "tsc -w",
 		"postinstall": "patch-package",
-		"version:patch": "yarn version",
-		"release": "yarn run bump && yarn run version:patch && git push --tags && git push"
+		"release": "yarn run bump && yarn version",
+		"postversion": "git push --tags && git push"
 	},
 	"devDependencies": {
 		"@types/hexo": "^3.8.7",
