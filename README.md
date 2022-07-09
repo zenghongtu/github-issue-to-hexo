@@ -34,16 +34,16 @@ jobs:
           ## optional below
           milestone: 'publish'
           output: './'
-      - name: Commit report
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'noreply@github.com'
-          git pull
-          git add .
-          git commit -m "update posts"
-          git push
-        env:
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      # - name: Commit report
+      #   run: |
+      #     git config --global user.name 'GitHub Action'
+      #     git config --global user.email 'noreply@github.com'
+      #     git pull
+      #     git add .
+      #     git commit -m "update posts"
+      #     git push
+      #   env:
+      #     PUSH_KEY: ${{ secrets.PUSH_KEY }}
       - name: Install Dependencies
         run: yarn install
       - name: Build
