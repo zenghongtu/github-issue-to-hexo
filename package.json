@@ -1,6 +1,6 @@
 {
 	"name": "GitHub-Issue-to-Hexo",
-	"version": "0.2.2",
+	"version": "1.0.0",
 	"main": "dist/index.js",
 	"repository": "git@github.com:zenghongtu/gh-issue-to-hexo.git",
 	"author": "zenghongtu <zenghongtu@gmail.com>",
@@ -10,7 +10,7 @@
 		"bump": "yarn run build && git commit -am 'bump'",
 		"dev": "tsc -w",
 		"postinstall": "patch-package",
-		"version:patch": "yarn version --patch",
+		"version:patch": "yarn version",
 		"release": "yarn run bump && yarn run version:patch && git push --tags && git push"
 	},
 	"devDependencies": {
