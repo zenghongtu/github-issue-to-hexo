@@ -26,13 +26,13 @@ jobs:
         with:
           node-version: '16'    
       # use here
-      - uses: zenghongtu/github-issue-to-hexo@v1.1.0
+      - uses: zenghongtu/github-issue-to-hexo@v2.0.0
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
-          issue_number: ${{ github.event.issue.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          replace: true
+          ## optional below
+          milestone: 'publish'
           output: './'
       - name: Commit report
         run: |
@@ -45,9 +45,9 @@ jobs:
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
       - name: Install Dependencies
-        run: npm install
+        run: yarn install
       - name: Build
-        run: npm run build
+        run: yarn run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
